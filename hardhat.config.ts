@@ -17,6 +17,7 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    hardhat: {},
     "arbitrum-sepolia": {
       url: process.env.ARBITRUM_SEPOLIA_URL || "",
       accounts:
