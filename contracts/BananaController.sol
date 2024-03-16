@@ -97,4 +97,23 @@ contract BananaController {
             commission
         );
     }
+
+    ///
+    /// strictly used for testing during hackathon only
+    /// @param recipient
+    /// @param erc20TokenAddress
+    /// @param value
+    function fakeDonate(
+        address recipient,
+        IERC20 erc20TokenAddress,
+        uint256 value
+    ) external {
+        emit Donate(
+            msg.sender,
+            recipient,
+            erc20TokenAddress,
+            remaining,
+            commission
+        );
+    }
 }
