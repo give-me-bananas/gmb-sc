@@ -7,4 +7,4 @@ const args = [
 ];
 export default args;
 
-// npx hardhat verify --network base-sepolia --constructor-args ./scripts/constructorArgs/lpConstructorArgs.ts 0xFDa2e6E84e30Ff3Dec247dD9f410F1a3720fdd47
+// npx hardhat verify --network base-sepolia --constructor-args ./scripts/constructor-arguments/base-sepolia.ts 0xae37D5b26C4eD804516261041BD332aC6eC7Ff27
