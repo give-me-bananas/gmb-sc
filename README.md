@@ -12,3 +12,15 @@ npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
 # gmb-sc
+
+
+## Deploy to Arbitrum Sepolia
+```
+npx hardhat run scripts/deploy.ts --network arbitrum-sepolia
+```
+
+
+## Deploy to Base Sepolia
+```
+npx hardhat run scripts/deploy.ts --network base-sepolia
+```
