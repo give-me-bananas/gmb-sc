@@ -10,7 +10,9 @@ async function main() {
   const tx = await bananaController.fakeDonate(
     randomAddress,
     randomAddress,
-    ethers.BigNumber.from(1234)
+    ethers.BigNumber.from(1234),
+    "WK",
+    "Lmao"
   );
 
   console.log(`tx hash: ${tx.hash}`);

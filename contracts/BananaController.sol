@@ -14,11 +14,13 @@ contract BananaController {
     event RegisterAsStreamer(address indexed streamer);
     event UnregisterAsStreamer(address indexed streamer);
     event Donate(
-        address indexed donar,
+        address indexed donor,
         address indexed recipient,
         IERC20 indexed erc20TokenAddress,
         uint256 netDonation,
-        uint256 commission
+        uint256 commission,
+        string donorName,
+        string message
     );
 
     modifier onlyOwner() {
@@ -68,7 +70,9 @@ contract BananaController {
     function donate(
         address recipient,
         IERC20 erc20TokenAddress,
-        uint256 value
+        uint256 value,
+        string memory donor,
+        string memory message
     ) external {
         require(
             supportedErc20[erc20TokenAddress],
@@ -94,7 +98,9 @@ contract BananaController {
             recipient,
             erc20TokenAddress,
             remaining,
-            commission
+            commission,
+            donor,
+            message
         );
     }
 
@@ -102,8 +108,18 @@ contract BananaController {
     function fakeDonate(
         address recipient,
         IERC20 erc20TokenAddress,
-        uint256 value
+        uint256 value,
+        string memory donor,
+        string memory message
     ) external {
-        emit Donate(msg.sender, recipient, erc20TokenAddress, value, value);
+        emit Donate(
+            msg.sender,
+            recipient,
+            erc20TokenAddress,
+            value,
+            value,
+            donor,
+            message
+        );
     }
 }
